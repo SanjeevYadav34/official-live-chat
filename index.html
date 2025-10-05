@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Chat Rooms</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚡ Live Chat Rooms</h1>
+      <p class="muted">Private 1‑on‑1 or small group chats — enter a username and create or join a room.</p>
+    </header>
+
+    <main id="home">
+      <div class="card">
+        <input id="usernameInput" placeholder="Enter your display name (e.g. Sanjeev)" maxlength="24" />
+        <div class="row">
+          <button id="createBtn" class="primary">Create Chat</button>
+          <button id="showJoin" class="outline">Join Chat</button>
+        </div>
+      </div>
+
+      <div id="joinPanel" class="card hidden">
+        <input id="joinCode" placeholder="Enter 6-letter CODE (e.g. QWERTY)" maxlength="6" />
+        <div class="row">
+          <button id="joinRoomBtn" class="primary">Join</button>
+          <button id="cancelJoin" class="outline">Cancel</button>
+        </div>
+        <p id="joinError" class="error"></p>
+      </div>
+    </main>
+
+    <section id="roomSection" class="hidden">
+      <div class="topbar">
+        <div>Room: <span id="roomDisplay"></span></div>
+        <div id="youDisplay"></div>
+      </div>
+
+      <div id="messages" class="messages"></div>
+
+      <div class="composer">
+        <input id="msgInput" placeholder="Type a message and press Send" />
+        <button id="sendBtn" class="primary">Send</button>
+      </div>
+      <div class="controls">
+        <button id="leaveBtn" class="outline">Leave Room</button>
+      </div>
+    </section>
+
+    <footer>
+      <small class="muted">Frontend connects to backend URL specified in <code>script.js</code>. See README for deploy instructions.</small>
+    </footer>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
